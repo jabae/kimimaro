@@ -215,7 +215,8 @@ def connect_pieces(skeleton):
       end_idx = nodes_tree_idx[idx[min_dist_idx]]
 
       # test if line between points exits object
-      if (radii[start_idx] + radii[end_idx]) >= min_dist:
+      # if (radii[start_idx] + radii[end_idx]) >= min_dist:
+      if min_dist <= 400:
         new_edge = np.array([[ start_idx, end_idx ]])
         edges = np.concatenate((edges, new_edge), axis=0)
         all_connected = True
